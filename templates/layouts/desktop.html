@@ -1,0 +1,39 @@
+{{define "base"}}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html ng-app="com.woodride.webapp.pablo">
+    <head>
+        {{template "head" .}}
+    </head>
+    <body id="home" class="valentino ">
+        <div id="container">
+            <div id="header">
+                {{template "header" .}}
+            </div>
+            <div id="subheader">
+                <div id="subMenu" class="clearfix">
+                    {{template "navigation" .}}
+                </div>
+                <div id="searchLens">
+                </div>
+                <div id="searchBar">
+                    <div id="searchCnt" class="a hfBtn" style="overflow: hidden; ">
+                        <div id="searchBox" class="clearfix">
+                            <form action="/" id="textSearch" class="clearfix">
+                                <span>Research</span>
+                                <input id="searchTextbox" type="text" name="criteria" placeholder="Búsqueda" />
+                                <input type="submit" id="searchButton" class="clearfix" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="wrapper">
+                {{template "content" .}}
+            </div>
+            <div id="footer" class="hmenu">
+                {{template "footer" .}}
+            </div>
+        </div>
+    </body>
+</html>
+{{end}}

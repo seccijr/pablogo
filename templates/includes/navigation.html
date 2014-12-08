@@ -1,0 +1,23 @@
+{{define "navigation"}}
+<ul class="menuNavigation">
+    {{range $name, $location = .locations}}
+    <li href="{{$location.url}}"
+        class="mpa {{if $location.selected}} 'selected' {{end}}">
+        <a href="{{$location.url}}"
+            class="{{if $location.selected}} 'selected' {{end}}"
+            title="{{$name}}">
+            {{$name}}
+        </a>
+        {{if gt len $location.children 0}}
+        <ul class="subMenu">
+            {{range $childName, $child = $location.children}}
+            <li>
+                <a href="{{$child.url}}" title="{{$childName}}">{{$childName}}</a>
+            </li>
+            {{end}}
+        </ul>
+        {{end}}
+    </li>
+    {{end}}
+</ul>
+{{end}}
